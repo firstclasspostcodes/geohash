@@ -1,0 +1,18 @@
+{
+  "name": "@firstclasspostcodes/geohash",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Transforms latitude and longitude geo-coordinates to geohashes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Firstclasspostcodes",
+  "license": "ISC",
+  "dependencies": {
+    "decimal.js": "^6.0.0",
+    "long": "^3.2.0",
+    "nodes2ts": "^1.1.10"
+  }
+}
