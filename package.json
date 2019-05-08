@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "commit": "npx git-cz",
-    "deploy": "gh-pages -d docs/build",
+    "deploy": "gh-pages -d build",
     "docs:dev": "npx docz dev",
     "docs:build": "npx docz build -d build --base /geohash",
     "lint": "eslint src/**/*.js",
