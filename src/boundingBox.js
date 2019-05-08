@@ -47,7 +47,6 @@ class BoundingBox {
     const flattened = [].concat(...ranges);
     return flattened.map(({ min, max }) => {
       const hashKey = new Key(min).key(keyLength);
-      // console.log(hashKey.toString(10));
       return { 
         key: hashKey.toString(10),
         min: min.toString(10),
@@ -58,49 +57,3 @@ class BoundingBox {
 }
 
 module.exports = BoundingBox;
-
-// const boundingBox = (latitude, longitude, radius = 0) => {
-//   const center = S2LatLng.fromDegrees(latitude, longitude);
-//   const latRefUnit = latitude > 0 ? -1.0 : 1.0;
-//   const lngRefUnit = longitude > 0 ? -1.0 : 1.0;
-//   const referenceLat = S2LatLng.fromDegrees(latitude + latRefUnit, longitude);
-//   const referenceLng = S2LatLng.fromDegrees(latitude, longitude + lngRefUnit);
-//   const latRadius = radius / center.getEarthDistance(referenceLat).toNumber();
-//   const lngRadius =  radius / center.getEarthDistance(referenceLng).toNumber();
-//   const minLatLng = S2LatLng.fromDegrees(latitude - latRadius, longitude - lngRadius);
-//   const maxLatLng = S2LatLng.fromDegrees(latitude + latRadius, longitude + lngRadius);
-//   const box = S2LatLngRect.fromLatLng(minLatLng, maxLatLng);
-//   return box;
-// };
-
-// const boundingBoxHashRanges = (latitude, longitude, radius = 1, keyLength = 7) => {
-//   const box = boundingBox(latitude, longitude, radius);
-//   const ranges = boundingBoxHashKeys(box, keyLength);
-//   return ranges.map(({ min, max }) => {
-//     const hashKey = generateHashKey(min, keyLength);
-//     return { 
-//       key: hashKey.toString(10),
-//       min: min.toString(10),
-//       max: max.toString(10),
-//     };
-//   });
-// };
-
-// const boundingBoxHashKeys = (box, keyLength = 7) => {
-//   const cells = new S2RegionCoverer().getCoveringCells(box);
-//   const ranges = cells.map(cell => (
-//     generateKeyRange(cell.rangeMin().id, cell.rangeMax().id, keyLength)
-//   ));
-//   return [].concat(...ranges);
-// };
-
-// const boundingBoxContainsPoint = (box, { latitude, longitude }) => {
-//   const point = S2LatLng.fromDegrees(latitude, longitude);
-//   return box.containsLL(point);
-// };
-
-// module.exports = {
-//   boundingBox,
-//   boundingBoxHashKeys,
-//   boundingBoxHashRanges,
-// };
