@@ -1,0 +1,30 @@
+language: node_js
+
+node_js:
+  - 10
+  - 11
+  - 9
+  - 8
+
+stages:
+  - test
+  - name: release
+    if: branch = master
+  - name: docs
+    if: branch = master
+
+jobs:
+  include:
+
+    - script:
+        - npx codecov
+        
+    - stage: release
+      name: "Release"
+      node_js: lts/*
+      script:
+        - npm ci
+        - npx semantic-release
+        - npm run deploy -- -x -r https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG
+        
+      

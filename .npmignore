@@ -1,0 +1,5 @@
+docs
+*.config.js
+.eslint*
+.husky*
+.travis*
