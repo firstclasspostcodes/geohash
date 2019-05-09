@@ -14,6 +14,7 @@
 */
 
 const BoundingBox = require('./boundingBox');
+const Long = require('long');
 
 class Query {
   constructor(docClient, options = {}) {
@@ -27,7 +28,8 @@ class Query {
   async find({ latitude, longitude }, radius = 1000) {
     const { locationKey } = this.options;
     const box = new BoundingBox(latitude, longitude, radius);
-    const queries = this.keyConditionExpressions(box.hashRanges());
+    const optimized = this.optimizeRanges(box.hashRanges());
+    const queries = this.keyConditionExpressions(optimized);
     const matches = await this.executeQueries(queries);
     return matches.filter(match => (
       box.contains(match[locationKey.latitude], match[locationKey.longitude])
@@ -48,6 +50,19 @@ class Query {
     }
     return items;
   };
+
+  optimizeRanges(ranges) {
+    const optimized = {};
+    ranges.forEach(({ min, max, key }) => {
+      const { [key]: curr } = optimized;
+      if (!curr) {
+        return optimized[key] = { min, max, key };
+      }
+      curr.min = Long.fromString(curr.min).gt(min) ? min : curr.min;
+      curr.max = Long.fromString(curr.max).lt(max) ? max : curr.max;
+    });
+    return Object.keys(optimized).map(key => optimized[key]);
+  }
 
   keyConditionExpressions(ranges) {
     const { indexKey } = this.options;
