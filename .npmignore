@@ -3,3 +3,7 @@ docs
 .eslint*
 .husky*
 .travis*
+doczrc.js
+example.js
+greenkeeper.json
+README.md
