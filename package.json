@@ -34,7 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-angular": "^8.0.0",
-    "aws-sdk": "^2.484.0",
+    "aws-sdk": "^2.488.0",
     "aws-sdk-mock": "^4.5.0",
     "docz": "^1.1.0",
     "docz-theme-default": "^1.2.0",
