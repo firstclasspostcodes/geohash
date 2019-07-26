@@ -1,9 +1,9 @@
 {
-  "vendors.js": "/geohash/static/js/vendors.88706930.js",
-  "vendors.js.map": "/geohash/static/js/vendors.f0add4b55ba007f975e3.js.map",
-  "app.js": "/geohash/static/js/app.f0add4b55ba007f975e3.js",
-  "app.js.map": "/geohash/static/js/app.f0add4b55ba007f975e3.js.map",
+  "vendors.js": "/geohash/static/js/vendors.ba2915d4.js",
+  "vendors.js.map": "/geohash/static/js/vendors.178e3b7125867d82c349.js.map",
+  "app.js": "/geohash/static/js/app.178e3b7125867d82c349.js",
+  "app.js.map": "/geohash/static/js/app.178e3b7125867d82c349.js.map",
   "index.js": "/geohash/static/js/index.95531d63.js",
-  "index.js.map": "/geohash/static/js/index.f0add4b55ba007f975e3.js.map",
+  "index.js.map": "/geohash/static/js/index.178e3b7125867d82c349.js.map",
   "index.html": "/geohash/index.html"
 }
