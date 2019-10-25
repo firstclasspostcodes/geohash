@@ -1,3 +1,4 @@
+![Cover](/.github/images/cover.png)
 
 # Geohash
 
