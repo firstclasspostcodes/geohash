@@ -43,7 +43,7 @@
     "eslint-plugin-import": "^2.19.1",
     "gh-pages": "^2.2.0",
     "git-cz": "^3.3.0",
-    "husky": "^3.1.0",
+    "husky": "^4.0.6",
     "jest": "^24.9.0",
     "jest-runner-eslint": "^0.7.5",
     "react-runkit": "^0.9.0"
