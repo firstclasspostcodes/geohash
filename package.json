@@ -45,7 +45,7 @@
     "git-cz": "^4.2.0",
     "husky": "^4.2.1",
     "jest": "^24.9.0",
-    "jest-runner-eslint": "^0.7.5",
+    "jest-runner-eslint": "^0.7.6",
     "react-runkit": "^0.9.0"
   },
   "runkitExampleFilename": "example.js"
