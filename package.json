@@ -32,7 +32,7 @@
     "nodes2ts": "^1.1.10"
   },
   "devDependencies": {
-    "@commitlint/cli": "^9.0.1",
+    "@commitlint/cli": "^9.1.1",
     "@commitlint/config-angular": "^9.1.1",
     "aws-sdk": "^2.713.0",
     "aws-sdk-mock": "^5.1.0",
